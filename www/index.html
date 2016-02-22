@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+<head>
+    <!--
+    Customize this policy to fit your own app's needs. For more guidance, see:
+        https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+    Some notes:
+        * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+        * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+        * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+            * Enable inline JS: add 'unsafe-inline' to default-src
+    -->
+    <meta http-equiv="Content-Security-Policy" content="default-src *; img-src * data:;style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <title>Hello World</title>
+</head>
+<body>
+<div class="camera-preview">
+
+</div>
+<div class="camera-controls">
+    <div class="card-panel-controls">
+
+        <div class="input-field">
+            <i class="mdi-action-schedule prefix"></i>
+            <input id="photo_timeout" type="number" class="validate" value="3" step="1" min="0">
+            <label for="photo_timeout">Timeout</label>
+        </div>
+        <div class="input-field">
+            <i class="mdi-content-content-copy prefix"></i>
+            <input id="photo_repeat" type="number" class="validate" value="3" step="1" min="1">
+            <label for="photo_repeat">Repeats</label>
+        </div>
+        <div class="input-field">
+            <i class="mdi-action-history prefix"></i>
+            <input id="photo_interval" type="number" class="validate" value="1" step="1" min="1">
+            <label for="photo_interval">Interval</label>
+        </div>
+
+    </div>
+    <div class="buttons">
+        <a class="btn-floating btn-large waves-effect waves-light blue js-action-gallery"><i class="mdi-image-image"></i></a>
+        <a class="btn-floating btn-large waves-effect waves-light blue js-action-liveview"><i class="mdi-image-movie-creation"></i></a>
+        <a class="btn-floating btn-large waves-effect waves-light red js-action-shoot"><i class="mdi-image-camera-alt"></i></a>
+    </div>
+</div>
+<div class="app-status">
+    <div class="card-panel">
+        <span class="js-init-status blue-text text-darken-2">Cordova loading...</span>
+    </div>
+    <div class="card-panel">
+        <span class="js-camera-status blue-text text-darken-2">Waiting...</span>
+    </div>
+    <a class="btn-floating btn-large waves-effect waves-light red js-action-refresh"><i class="mdi-action-cached"></i></a>
+</div>
+<div class="timer" id="timer">
+    <div class="info">
+        <div class="js-seconds"><i class="mdi-device-access-time"></i></div>
+        <div class="js-repeats">loading</div>
+    </div>
+    <div class="preloader-wrapper big active">
+        <div class="spinner-layer spinner-blue-only">
+            <div class="circle-clipper left">
+                <div class="circle"></div>
+            </div><div class="gap-patch">
+            <div class="circle"></div>
+        </div><div class="circle-clipper right">
+            <div class="circle"></div>
+        </div>
+        </div>
+    </div>
+</div>
+<ul id="slide-out" class="side-nav">
+    <li><a href="#" class="js-menu-reconnect">Reconnect</a></li>
+    <li><a href="#" class="js-menu-liveview">Restart LiveView</a></li>
+    <li><a href="#" class="js-menu-gallery">Show gallery</a></li>
+    <li><a href="#" class="js-menu-exit">Close app</a></li>
+</ul>
+<a href="#" data-activates="slide-out" class="button-collapse show-on-large" style="display: none !important;"><i class="mdi-navigation-menu"></i></a>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>
