@@ -1,4 +1,4 @@
-Contributors
+Contributors:
 ------------
 [@Gillardo](https://github.com/Gillardo/), [@TankOs](https://github.com/TankOs), [@Rovi23](https://github.com/Rovi23), [@josemanuelbd](https://github.com/josemanuelbd), [@ielcoro](https://github.com/ielcoro)
 
@@ -12,8 +12,9 @@ Current Version: 2.0.1
 
 Requirements
 -------------
-- Android 4 or higher / iOS 6 or higher / WP8
-- Cordova 3.0 or higher
+- Android 4 or higher / iOS 6 or higher / WP8.
+
+- Cordova 3.0 or higher.
 
 Installation
 -------------
